@@ -18,7 +18,7 @@ app.controller("mainController", function($scope, $http){
                 var date = value.date;
                 //For each episodes, add it to the results array
                 angular.forEach(value.episodes, function(tvshow, index){
-                    //Create a date string from the timestamp so we can filter on it based on user text input
+                    //Create a date string from the timestamp so we can filter on it based on user text input // We already have a date string, the issue is that the API response doesn't attach dates to each episode, so we are doing that ourselves.
                     tvshow.date = date; //Attach the full date to each episode
                     $scope.results.push(tvshow);
                     //Loop through each genre for this episode
